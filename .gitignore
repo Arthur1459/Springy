@@ -1,0 +1,6 @@
+/src/build/
+/src/dist/
+/src/__pycache__/
+/src/.DS_Store
+.idea/
+/src/pyInstaller.txt
