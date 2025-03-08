@@ -8,4 +8,5 @@ fullscreen = False
 fps = 60
 fps_treshold = 0.5
 
+gravity = 20
 entity_grid_factor = 10
