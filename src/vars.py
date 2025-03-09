@@ -19,5 +19,7 @@ cursor = (0, 0)
 info_txt = ""
 id = 0
 
+wait_key = 0
 test_entities = []
 entity_grid = {}
+toggle_shape = False

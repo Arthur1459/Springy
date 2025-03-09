@@ -9,6 +9,7 @@ import pygame as pg
 class Spring:
     def __init__(self, node_1: SolidNode, node_2: SolidNode, k=0.02, extension_i=1): # k < 0.2 better
         self.id = u.getNewId()
+        self.type_name = 'solidnode'
         self.tags = {'spring'}
         self.node_1, self.node_2 = node_1, node_2
         self.k_0, self.k_applied = k, k
@@ -21,6 +22,8 @@ class Spring:
         self.k_applied = self.k_0 * (1 + abs(2 * self.get_extension()/self.len_0))
         force = t.Vmul(t.Vdir(self.node_1.coord, self.node_2.coord), self.k_applied * self.get_extension())
         force[2] = 0
+        if t.norm(force) > 50:
+            force = t.Vmul(t.normalise(force), 50)
         self.node_1.add_accel_by(t.Vmul(force, 1))
         self.node_2.add_accel_by(t.Vmul(force, -1))
 

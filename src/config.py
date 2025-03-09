@@ -10,3 +10,5 @@ fps_treshold = 0.5
 
 gravity = 20
 entity_grid_factor = 10
+
+colors = {'node': (120, 120, 120), 'movingnode': (160, 160, 0), 'solidnode':(230, 195, 0)}

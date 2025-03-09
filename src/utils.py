@@ -2,6 +2,7 @@ import os
 import sys
 
 import pygame as pg
+from time import time
 
 import vars as vr
 import config as cf
@@ -71,3 +72,10 @@ def coord_to_pos(coord):
 
 def pos_to_coord(pos, offset=0.):
     return vr.win_width * (pos[1] + offset) / cf.entity_grid_factor, vr.win_height * (pos[0] + offset) / cf.entity_grid_factor
+
+def wait_key(dt=0.2, reset=True):
+    t = time()
+    if t - vr.wait_key > dt:
+        if reset: vr.wait_key = t
+        return True
+    else: return False
